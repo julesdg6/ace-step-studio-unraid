@@ -1,10 +1,16 @@
 <Container version="2">
   <Name>ACE-Step-Studio</Name>
-  <Repository>yourrepo/ace-step-unraid-ui:latest</Repository>
+  <Repository>ghcr.io/julesdg6/ace-step-studio-unraid:latest</Repository>
+  <Registry>https://github.com/julesdg6/ace-step-studio-unraid/pkgs/container/ace-step-studio-unraid</Registry>
   <Network>bridge</Network>
   <WebUI>http://[IP]:[PORT:8080]/studio.html</WebUI>
+  <Overview>Lightweight frontend UI for ACE-Step, a music generation AI. Configure it to connect to your ACE-Step backend and access the studio from your browser.</Overview>
+  <Category>MediaApp:Music</Category>
+  <GitHub>https://github.com/julesdg6/ace-step-studio-unraid</GitHub>
 
-  <Config Name="WebUI Port" Target="8080" Default="8088" Mode="tcp" Type="Port">8088</Config>
-  <Config Name="ACE_STEP_HOST" Target="ACE_STEP_HOST" Default="192.168.1.64" Type="Variable">192.168.1.64</Config>
-  <Config Name="ACE_STEP_PORT" Target="ACE_STEP_PORT" Default="7860" Type="Variable">7860</Config>
+  <Config Name="WebUI Port" Target="8080" Default="8088" Mode="tcp" Description="Port the Studio UI will be accessible on." Type="Port">8088</Config>
+  <Config Name="ACE_STEP_PROTOCOL" Target="ACE_STEP_PROTOCOL" Default="http" Description="Protocol used to reach the ACE-Step backend (http or https)." Type="Variable">http</Config>
+  <Config Name="ACE_STEP_HOST" Target="ACE_STEP_HOST" Default="192.168.1.64" Description="IP address or hostname of the ACE-Step backend." Type="Variable">192.168.1.64</Config>
+  <Config Name="ACE_STEP_PORT" Target="ACE_STEP_PORT" Default="7860" Description="Port the ACE-Step backend is listening on." Type="Variable">7860</Config>
+  <Config Name="ACE_STEP_BASE_PATH" Target="ACE_STEP_BASE_PATH" Default="" Description="Optional base path if ACE-Step is hosted under a sub-path." Type="Variable"></Config>
 </Container>
