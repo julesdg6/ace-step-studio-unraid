@@ -30,24 +30,13 @@ ghcr.io/julesdg6/ace-step-studio-unraid:latest
 > **Prerequisite:** You must have **SpaceInvaderOne's ACE-Step** container installed first.  
 > Search for **ACE-Step** in the **Apps** (Community Apps) catalogue and install it before continuing.
 
-### Option 1 — Add the template via URL (recommended)
-
-1. In Unraid, go to **Apps** and click the **Settings** (gear icon) near the top-right.
-2. Under **Template Repositories**, add the following URL and click **Save**:
+1. Download the template to your Unraid server (run this in the Unraid terminal):
+   ```bash
+   wget -O /boot/config/plugins/dockerMan/templates-user/Ace-Step-Studio.xml \
+     https://raw.githubusercontent.com/julesdg6/ace-step-studio-unraid/main/unraid/Ace-Step-Studio.xml
    ```
-   https://raw.githubusercontent.com/julesdg6/ace-step-studio-unraid/main/unraid/Ace-Step-Studio.xml
-   ```
-3. Return to the **Apps** page and search for **ACE-Step-Studio**.
-4. Click **Install**, fill in your ACE-Step backend details (`ACE_STEP_HOST`, `ACE_STEP_PORT`, etc.) and click **Apply**.
-
-### Option 2 — Add the template manually
-
-1. In Unraid, go to **Docker** → **Add Container**.
-2. In the **Template URL** field paste:
-   ```
-   https://raw.githubusercontent.com/julesdg6/ace-step-studio-unraid/main/unraid/Ace-Step-Studio.xml
-   ```
-3. Click the load/refresh icon next to the field to populate the form, adjust the environment variables to match your setup, and click **Apply**.
+2. In Unraid, go to **Docker** → **Add Container**.
+3. Select **ACE-Step-Studio** from the template dropdown, adjust the environment variables (`ACE_STEP_HOST`, `ACE_STEP_PORT`, etc.) to match your setup, and click **Apply**.
 
 Once the container is running, open the Web UI at `http://<unraid-ip>:8088/studio.html`.
 
