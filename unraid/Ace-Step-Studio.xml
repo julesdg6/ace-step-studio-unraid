@@ -1,0 +1,10 @@
+<Container version="2">
+  <Name>ACE-Step-Studio</Name>
+  <Repository>yourrepo/ace-step-unraid-ui:latest</Repository>
+  <Network>bridge</Network>
+  <WebUI>http://[IP]:[PORT:8080]/studio.html</WebUI>
+
+  <Config Name="WebUI Port" Target="8080" Default="8088" Mode="tcp" Type="Port">8088</Config>
+  <Config Name="ACE_STEP_HOST" Target="ACE_STEP_HOST" Default="192.168.1.64" Type="Variable">192.168.1.64</Config>
+  <Config Name="ACE_STEP_PORT" Target="ACE_STEP_PORT" Default="7860" Type="Variable">7860</Config>
+</Container>
